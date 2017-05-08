@@ -40,7 +40,35 @@ page '/*.txt', layout: false
 # Build-specific configuration
 # https://middlemanapp.com/advanced/configuration/#environment-specific-settings
 
-# configure :build do
+configure :build do
 #   activate :minify_css
 #   activate :minify_javascript
-# end
+
+  activate :relative_assets
+  set :relative_links, true
+
+  require_relative "./lib/build_cleaner"
+  activate :build_cleaner
+
+
+
+end
+
+
+set :css_dir, 'stylesheets'
+
+set :js_dir, 'javascripts'
+
+set :images_dir, 'images'
+
+
+
+
+
+
+
+
+
+
+
+
